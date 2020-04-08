@@ -10,7 +10,6 @@ try:
  bucket_name = 'firstbucket-kkt'
  s3_file_name = 'newproducts1.csv'
  res = client.get_object(Bucket=bucket_name, Key=s3_file_name)
-    #download_path = '/home/ubuntu/db/'.format(s3_file_name)
  download_path = '/tmp/{}{}'.format(uuid.uuid4(), s3_file_name)
  client.download_file(bucket_name,s3_file_name,download_path)
  csv_data = csv.reader(download_path)
